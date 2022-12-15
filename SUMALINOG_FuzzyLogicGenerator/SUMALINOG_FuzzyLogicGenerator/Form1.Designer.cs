@@ -37,7 +37,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_carspeed = new System.Windows.Forms.Label();
             this.lbl_speed = new System.Windows.Forms.Label();
             this.lbl_distance = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -68,11 +68,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 71);
+            this.label2.Location = new System.Drawing.Point(4, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 24);
+            this.label2.Size = new System.Drawing.Size(212, 24);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Speed of the Car:";
+            this.label2.Text = "Speed of the Car Infront:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
@@ -89,7 +89,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 135);
+            this.label3.Location = new System.Drawing.Point(8, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(208, 24);
             this.label3.TabIndex = 7;
@@ -103,6 +103,7 @@
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(195, 45);
             this.trackBar2.TabIndex = 8;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // button2
             // 
@@ -112,6 +113,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Fuzzify";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -129,21 +131,21 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(22, 266);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(281, 24);
+            this.label4.Size = new System.Drawing.Size(345, 24);
             this.label4.TabIndex = 11;
-            this.label4.Text = "The Speed of the car should be:";
+            this.label4.Text = "The Speed of the car behind should be:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label5
+            // lbl_carspeed
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(241, 319);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(244, 57);
-            this.label5.TabIndex = 12;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lbl_carspeed.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lbl_carspeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_carspeed.Location = new System.Drawing.Point(26, 319);
+            this.lbl_carspeed.Name = "lbl_carspeed";
+            this.lbl_carspeed.Size = new System.Drawing.Size(459, 57);
+            this.lbl_carspeed.TabIndex = 12;
+            this.lbl_carspeed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_carspeed.Click += new System.EventHandler(this.label5_Click);
             // 
             // lbl_speed
             // 
@@ -170,7 +172,7 @@
             this.ClientSize = new System.Drawing.Size(558, 450);
             this.Controls.Add(this.lbl_distance);
             this.Controls.Add(this.lbl_speed);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbl_carspeed);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -201,7 +203,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_carspeed;
         private System.Windows.Forms.Label lbl_speed;
         private System.Windows.Forms.Label lbl_distance;
     }
