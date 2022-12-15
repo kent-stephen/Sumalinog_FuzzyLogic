@@ -26,20 +26,21 @@ namespace SUMALINOG_FuzzyLogicGenerator
         public void setMembers()
         {
             speed = new MembershipFunctionCollection();
-            speed.Add(new MembershipFunction("Slow", 0.0, 0.0, 45.0, 50.0));
-            speed.Add(new MembershipFunction("Medium", 45.0, 50.0, 50.0, 55.0));
-            speed.Add(new MembershipFunction("Fast", 50.0, 55.0, 100.0, 100.0));
+            speed.Add(new MembershipFunction("Slow", 0.0, 0.0, 10.0, 30.0));
+            speed.Add(new MembershipFunction("Medium", 25.0, 45.0, 50.0, 65.0));
+            speed.Add(new MembershipFunction("Fast", 60.0, 65.0, 100.0, 100.0));
             mySpeed = new LinguisticVariable("SPEED", speed);
 
             distance = new MembershipFunctionCollection();
-            distance.Add(new MembershipFunction("Close", 0.0, 0.0, 10.0, 20.0));
-            distance.Add(new MembershipFunction("Far", 10.0, 20.0, 100.0, 100.0));
+            distance.Add(new MembershipFunction("Close", 0.0, 0.0, 10.0, 30.0));
+            distance.Add(new MembershipFunction("Medium", 25.0, 45.0, 50.0, 65.0));
+            distance.Add(new MembershipFunction("Far", 60.0, 65.0, 100.0, 100.0));
             myDistance = new LinguisticVariable("DISTANCE", distance);
 
             carspeed = new MembershipFunctionCollection();
-            carspeed.Add(new MembershipFunction("Slow", 0.0, 0.0, 45.0, 50.0));
-            carspeed.Add(new MembershipFunction("Medium", 45.0, 50.0, 50.0, 55.0));
-            carspeed.Add(new MembershipFunction("Fast", 50.0, 55.0, 100.0, 100.0));
+            carspeed.Add(new MembershipFunction("Slow", 0.0, 0.0, 10.0, 30.0));
+            carspeed.Add(new MembershipFunction("Medium", 25.0, 45.0, 50.0, 65.0));
+            carspeed.Add(new MembershipFunction("Fast", 60.0, 65.0, 100.0, 100.0));
             myCarSpeed = new LinguisticVariable("CARSPEED", carspeed);
 
         }
@@ -50,8 +51,11 @@ namespace SUMALINOG_FuzzyLogicGenerator
             myRules.Add(new FuzzyRule("IF (DISTANCE IS Close) AND (SPEED IS Slow)  THEN CARSPEED IS Slow"));
             myRules.Add(new FuzzyRule("IF (DISTANCE IS Close) AND (SPEED IS Medium)  THEN CARSPEED IS Slow"));
             myRules.Add(new FuzzyRule("IF (DISTANCE IS Close) AND (SPEED IS Fast)  THEN CARSPEED IS Medium"));
+            myRules.Add(new FuzzyRule("IF (DISTANCE IS Medium) AND (SPEED IS Slow)  THEN CARSPEED IS Medium"));
+            myRules.Add(new FuzzyRule("IF (DISTANCE IS Medium) AND (SPEED IS Medium)  THEN CARSPEED IS Medium"));
+            myRules.Add(new FuzzyRule("IF (DISTANCE IS Medium) AND (SPEED IS Fast)  THEN CARSPEED IS Fast"));
             myRules.Add(new FuzzyRule("IF (DISTANCE IS Far) AND (SPEED IS Slow)  THEN CARSPEED IS Medium"));
-            myRules.Add(new FuzzyRule("IF (DISTANCE IS Far) AND (SPEED IS Medium)  THEN CARSPEED IS Medium"));
+            myRules.Add(new FuzzyRule("IF (DISTANCE IS Far) AND (SPEED IS Medium)  THEN CARSPEED IS Fast"));
             myRules.Add(new FuzzyRule("IF (DISTANCE IS Far) AND (SPEED IS Fast)  THEN CARSPEED IS Fast"));
         }
 
