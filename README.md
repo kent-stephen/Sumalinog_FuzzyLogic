@@ -2,7 +2,8 @@
 
 ## Summary
 
-This is a simple Fuzzy Logic System that deals with how fast a car should run with respect to the car in front of it. The following are the rules that are used to determine its speed:
+This is a simple Fuzzy Logic System that deals with how fast a car should run with respect to the car in front of it with the help of the DotFuzzy library.
+The following are the rules that are used to determine its speed:
 
 1. IF (DISTANCE IS Close) AND (SPEED IS Slow)  THEN CARSPEED IS Slow
 2. IF (DISTANCE IS Close) AND (SPEED IS Medium)  THEN CARSPEED IS Slow
